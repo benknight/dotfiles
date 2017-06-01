@@ -1,0 +1,61 @@
+##
+# --- This is meant to extend or override these configurations: ---
+#     https://github.com/mathiasbynens/dotfiles
+##
+
+# Update the dotfiles
+alias dotfiles="cd; curl -#L https://github.com/mathiasbynens/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh,LICENSE-MIT.txt}"
+
+# Spotify controls
+# alias spotify="osascript ~/SpotifyControl.scpt"
+
+# Git
+GIT_AUTHOR_NAME="Benjamin Knight"
+GIT_AUTHOR_EMAIL="ben@benknight.me"
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+
+git config --global user.name "$GIT_AUTHOR_NAME"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
+git config --global user.signingkey 715F00C2
+git config --global alias.d diff
+git config --global core.editor "nano"
+
+# Undo disabling of long press in .osx -- I like to use accent marks!
+defaults write -g ApplePressAndHoldEnabled -bool true
+
+# Customize the prompt a bit
+# export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n★ \[$RESET\]"
+
+# Symlink to a MAMP version of php
+alias phpmamp='/Applications/MAMP/bin/php/php5.6.2/bin/php'
+
+# Set Node path
+export NODE_PATH="/usr/local/lib/node_modules"
+
+# Avoid duplicates
+export HISTCONTROL=ignoredups:erasedups
+
+# After each command, append to the history file and reread it
+# export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+
+# Git Autocompletion Script
+# http://code-worrier.com/blog/autocomplete-git/
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+export NVM_DIR="/Users/ben/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Thumbtack dev
+export TT_WEBSITE_DIR=${HOME}/Drive/Code/thumbtack-website
+export GOPATH=${HOME}/Downloads/thumbtack-go
+
+# Add the following to your shell init to set up gpg-agent automatically for every shell
+if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+    source ~/.gnupg/.gpg-agent-info
+    export GPG_AGENT_INFO
+else
+    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi
