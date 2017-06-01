@@ -1,0 +1,19 @@
+# Types
+--type-set
+scss=.scss
+--type-set
+jsx=.jsx
+
+# Sort the list of files before searching; slower, but deterministic and human-friendly
+--sort-files
+
+# If the given regex is all lowercase, ignore case; otherwise preserve it.
+# Like vim's option of the same name.
+--smart-case
+
+# Pipe output into `less`, using the same defaults as git
+--pager
+less -RFSX
+
+# Ignore patterns
+--ignore-file=match:.phar
