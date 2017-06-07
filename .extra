@@ -50,7 +50,7 @@ export NVM_DIR="/Users/ben/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Thumbtack dev
-export TT_WEBSITE_DIR=${HOME}/Drive/Code/thumbtack-website
+export TT_WEBSITE_DIR=${HOME}/Code/thumbtack-website
 export GOPATH=${HOME}/Downloads/thumbtack-go
 
 # Add the following to your shell init to set up gpg-agent automatically for every shell
