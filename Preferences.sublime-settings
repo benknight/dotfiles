@@ -1,0 +1,17 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Slush & Poppies.tmTheme",
+	"font_face": "Liberation Mono",
+	"font_size": 15,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"rulers":
+	[
+		80
+	],
+	"show_encoding": true,
+	"theme": "Oceanic Next.sublime-theme",
+	"folder_exclude_patterns": [".git", "_build", "build", "node_modules","vendor"],
+	"find_selected_text": true
+}
