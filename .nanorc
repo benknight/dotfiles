@@ -1,0 +1,69 @@
+# This code is free software; you can redistribute it and/or modify it under
+# the terms of the new BSD License.
+#
+# Copyright (c) 2010, Sebastian Staudt
+
+# A nano configuration file to enable syntax highlighting of some Git specific
+# files with the GNU nano text editor (http://www.nano-editor.org)
+#
+# Save this file to a directory of your choice and add it to your nanorc using
+# include ${PATH_TO_THE_FILE}/git.nanorc
+
+# This syntax format is used for editing commit and tag messages
+syntax "git commit/tag messages" "COMMIT_EDITMSG|TAG_EDITMSG"
+
+# overlong lines
+color brightred "^.{70,}.+$"
+
+# comment
+color blue "^#.*$"
+
+# JIRA ticket id
+color yellow "[A-Z]+-[0-9]+"
+
+# special comment lines
+color green      "^# Changes to be committed:"
+color red        "^# Changes not staged for commit:"
+color brightblue "^# Untracked files:"
+color brightblue "^# On branch .+$"
+color brightblue "^# Your branch is ahead of .+$"
+# No need to highlight this.
+# color brightblue  "Your branch is up-to-date with .+$"
+color brightred   "^# Your branch and '[^']+' have diverged"
+color white       "#[[:space:]](deleted|modified|new file|renamed):[[:space:]].*"
+color red         "#[[:space:]]deleted:"
+color green       "#[[:space:]]modified:"
+color brightgreen "#[[:space:]]new file:"
+color cyan        "#[[:space:]]renamed:"
+
+# Recolor hash symbols
+color blue "#"
+
+# This syntax format is used for interactive rebasing
+syntax "git rebase todo" "git-rebase-todo"
+
+# Default
+color white ".*"
+
+# Comments
+color blue "^#.*"
+
+# Commit IDs
+color brightwhite "[0-9a-f]{7,40}"
+
+# Rebase commands
+color green       "^(e|edit) [0-9a-f]{7,40}"
+color green       "^#  (e, edit)"
+color brightgreen "^(f|fixup) [0-9a-f]{7,40}"
+color brightgreen "^#  (f, fixup)"
+color brightwhite "^(p|pick) [0-9a-f]{7,40}"
+color brightwhite "^#  (p, pick)"
+color cyan        "^(r|reword) [0-9a-f]{7,40}"
+color cyan        "^#  (r, reword)"
+color brightred   "^(s|squash) [0-9a-f]{7,40}"
+color brightred   "^#  (s, squash)"
+color yellow      "^(x|exec) [^ ]+ [0-9a-f]{7,40}"
+color yellow      "^#  (x <cmd>, exec <cmd>)"
+
+# Recolor hash symbols
+color blue "#"
